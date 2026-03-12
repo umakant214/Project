@@ -36,6 +36,7 @@ This project is designed to _____________________________. The project has **fro
 
 ## 🗂 Project Structure
 
+```bash
 PROJECT/
 ├─ Frontend/
 │  ├─ node_modules/        # Project dependencies
@@ -66,6 +67,7 @@ PROJECT/
 │  ├─ vite.config.ts        # Vite configuration
 │  └─ README.md             # Project documentation
 
+```
 ---
 
 ## Installation
