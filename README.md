@@ -80,3 +80,72 @@ npm run dev  # Start backend server at http://localhost:3000
 ```
 Note: Make sure MongoDB is running locally or use a cloud DB like MongoDB Atlas.
 ---
+
+
+
+
+
+Social Media Application
+•	User profiles with customizable settings
+•	Post creation and management
+•	Friend requests and direct messaging
+•	Real-time notifications using WebSocket
+ Event Management System
+•	Register as a Member
+•	Add Events 
+•	Create Content Register for Events 
+•	Chat with Other Members
+•	Posts and Discussions
+Online Learning Platform
+
+Online Streaming Platform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+
++----------------+           +----------------+
+|     Admin      |           |  MasterCourse  |
++----------------+           +----------------+
+| admin_id       |1         *| course_id      |
+| name           |-----------| name           |
+| email          |           | description    |
+| password       |           | created_by     |--> FK Admin.admin_id
++----------------+           +----------------+
+
++----------------+           +----------------+
+|   PlanMaster   |           |      Plans     |
++----------------+           +----------------+
+| plan_id        |1         *| id             |
+| plan_name      |-----------| user_id        |--> FK User.user_id
+| description    |           | plan_id        |--> FK PlanMaster.plan_id
+| price          |           | start_date     |
+| duration_days  |           | end_date       |
+| created_by     |--> FK Admin.admin_id
++----------------+           | status         |
+                             +----------------+
+
++----------------+           +----------------+
+|      User      |           |     Course     |
++----------------+           +----------------+
+| user_id        |1         *| id             |
+| name           |-----------| user_id        |--> FK User.user_id
+| email          |           | course_id      |--> FK MasterCourse.course_id
+| password       |           | enrollment_date|
++----------------+           | status         |
+                             +----------------+
+
+
+```
