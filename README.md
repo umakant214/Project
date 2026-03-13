@@ -117,13 +117,27 @@ Online Streaming Platform
 
 
 +----------------+           +----------------+
-|     Admin      |           |  MasterCourse  |
+|     Admin      |           |     User       |
 +----------------+           +----------------+
-| admin_id       |1         *| course_id      |
+| admin_id       |1         *| user_id        |
 | name           |-----------| name           |
-| email          |           | description    |
-| password       |           | created_by     |--> FK Admin.admin_id
+| email          |           | email          |
+| password       |           | password       |
++----------------+           | role           |
+                             | status         | <-- Block / Unblock
+                             | created_by     |--> FK Admin.admin_id
+                             +----------------+
+
 +----------------+           +----------------+
+|  MasterCourse  |           |     Course     |
++----------------+           +----------------+
+| course_id      |1         *| id             |
+| name           |-----------| user_id        |--> FK User.user_id
+| description    |           | course_id      |--> FK MasterCourse.course_id
+| created_by     |--> FK Admin.admin_id
++----------------+           | enrollment_date|
+                             | status         |
+                             +----------------+
 
 +----------------+           +----------------+
 |   PlanMaster   |           |      Plans     |
@@ -137,15 +151,26 @@ Online Streaming Platform
 +----------------+           | status         |
                              +----------------+
 
-+----------------+           +----------------+
-|      User      |           |     Course     |
-+----------------+           +----------------+
-| user_id        |1         *| id             |
-| name           |-----------| user_id        |--> FK User.user_id
-| email          |           | course_id      |--> FK MasterCourse.course_id
-| password       |           | enrollment_date|
-+----------------+           | status         |
-                             +----------------+
+
+```
+
+
+```
+Admin ----------------> MasterCourse
+      \                 (creates courses)
+       \
+        \--------------> PlanMaster
+                         (creates plans)
+         \
+          \------------> User
+                         (block/unblock)
+
+User -----------------> Course
+      \                 (enrolls in MasterCourse)
+       \
+        \--------------> Plans
+                         (subscribes to PlanMaster)
+
 
 
 ```
