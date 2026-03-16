@@ -1,0 +1,105 @@
+Table admin {
+  id int [pk, increment]
+  name varchar
+  email varchar
+  password varchar
+  mobile varchar
+  profile varchar
+  address varchar
+  otp varchar
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table user {
+  id int [pk, increment]
+  name varchar
+  email varchar
+  password varchar
+  mobile varchar
+  profile varchar
+  address varchar
+  credit int
+  otp varchar
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table mastercourse {
+  id int [pk, increment]
+  name varchar
+  desc varchar
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table course {
+  id int [pk, increment]
+  course_id int
+  user_id int
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table masterplan {
+  id int [pk, increment]
+  name varchar
+  desc varchar
+  credit int
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table plan {
+  id int [pk, increment]
+  plan_id int
+  user_id int
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table chatroom {
+  id int [pk, increment]
+  participants varchar
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table message {
+  id int [pk, increment]
+  room_id int
+  sender_id int
+  receiver_id int
+  message varchar
+  status int
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table contactus {
+  id int [pk, increment]
+  name varchar
+  email varchar
+  mobile varchar
+  desc varchar
+  subject varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+Ref: course.user_id > user.id
+Ref: course.course_id > mastercourse.id
+
+Ref: plan.user_id > user.id
+Ref: plan.plan_id > masterplan.id
+
+Ref: message.room_id > chatroom.id
+Ref: message.sender_id > user.id
+Ref: message.receiver_id > user.id

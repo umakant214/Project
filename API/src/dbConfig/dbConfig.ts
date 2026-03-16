@@ -6,7 +6,7 @@ export const AppDataSource = new DataSource({
   port: 5432,
   username: "postgres",
   password: "Umakant@1234",
-  database: "todo",
+  database: "lms_database",
   synchronize: true,
   entities: ["src/entities/**/*.ts"],
   migrations: ["src/entities/migration/**/*.ts"],

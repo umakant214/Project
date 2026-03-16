@@ -1,0 +1,171 @@
+{
+  "version": "1.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "detailLevel": "All",
+  "tablePositions": [
+    {
+      "name": "admin",
+      "schemaName": "public",
+      "x": 0,
+      "y": 50
+    },
+    {
+      "name": "user",
+      "schemaName": "public",
+      "x": 251.7392578125,
+      "y": 50
+    },
+    {
+      "name": "mastercourse",
+      "schemaName": "public",
+      "x": 503.478515625,
+      "y": 50
+    },
+    {
+      "name": "course",
+      "schemaName": "public",
+      "x": 0,
+      "y": 484
+    },
+    {
+      "name": "masterplan",
+      "schemaName": "public",
+      "x": 755.2177734375,
+      "y": 50
+    },
+    {
+      "name": "plan",
+      "schemaName": "public",
+      "x": 251.7392578125,
+      "y": 516
+    },
+    {
+      "name": "chatroom",
+      "schemaName": "public",
+      "x": 503.478515625,
+      "y": 324
+    },
+    {
+      "name": "message",
+      "schemaName": "public",
+      "x": 755.2177734375,
+      "y": 356
+    },
+    {
+      "name": "contactus",
+      "schemaName": "public",
+      "x": 0,
+      "y": 758
+    }
+  ],
+  "tableGroupCollapseStates": [],
+  "stickyNoteLayouts": [],
+  "referencePaths": [
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "course",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "user",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "course_id"
+      ],
+      "firstTableName": "course",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "mastercourse",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "plan",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "user",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "plan_id"
+      ],
+      "firstTableName": "plan",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "masterplan",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "room_id"
+      ],
+      "firstTableName": "message",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "chatroom",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "sender_id"
+      ],
+      "firstTableName": "message",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "user",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "receiver_id"
+      ],
+      "firstTableName": "message",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "user",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    }
+  ]
+}
