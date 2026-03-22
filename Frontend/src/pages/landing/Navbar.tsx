@@ -1,5 +1,6 @@
 import { IoSearch } from "react-icons/io5";
 import { TbCategory } from "react-icons/tb";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg  custom-navbar px-5 py-4">
@@ -27,29 +28,39 @@ const Navbar = () => {
         {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarContent">
           {/* ✅ FIXED MENU */}
-          <ul className="ms-auto me-auto navbar-nav d-flex flex-column flex-lg-row gap-2 gap-lg-4">
+          <ul className="ms-auto me-auto navbar-nav d-flex flex-column flex-lg-row gap-2 gap-lg-2">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Demos
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Pages
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item dropdown">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Accounts
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Megamenu
-              </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/register">
+                Register
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
             </li>
           </ul>
 
